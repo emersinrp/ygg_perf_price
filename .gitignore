@@ -1,0 +1,4 @@
+venv_ygg_perf_price/
+__pycache__/
+*.pyc
+*.log
