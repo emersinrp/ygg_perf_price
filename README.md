@@ -55,6 +55,15 @@ locust --headless -f locustfile.py --users 1 --spawn-rate 1
 
 # Executa com interface grafica:
 locust -f locustfile.py
+
+# Stress test (Obs: Descobrir o ponto de quebra da API, aumentando o número de usuários até o sistema falhar):
+locust --headless -f locustfile.py --users 500 --spawn-rate 20 --run-time 10m --csv=stress_test
+
+# Soak test (Obj: Verificar a estabilidade da API durante longos períodos de uso constante):
+locust --headless -f locustfile.py --users 50 --spawn-rate 2 --run-time 4h --csv=soak_test
+
+# Spike test (Obj: Avaliar como a API lida com um aumento súbito e intenso de tráfego):
+locust --headless -f locustfile.py --users 200 --spawn-rate 200 --run-time 5m --csv=spike_test
 ```
 
 Por padrão ambos estão ativos.

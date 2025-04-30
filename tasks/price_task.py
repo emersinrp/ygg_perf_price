@@ -32,7 +32,7 @@ class PriceTaskSet(TaskSet):
             logger.warning(f"⚠️ ALERT: {name} reply: {elapsed:.3f}s | buyer_code: {buyer_code} | SKUs: {sku_count} | token_age: {age_str}")
         else:
             logger.info(f"{name} reply: {elapsed:.3f}s | buyer_code: {buyer_code} | SKUs: {sku_count} | token_age: {age_str}")
-
+    
     @task
     def fetch_price(self):
         if not RUN_GET_PRICE:
